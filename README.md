@@ -24,3 +24,19 @@ A hands-on journey to learning Kubernetes through practical experiments and smal
 - [ ] Ingress
 - [ ] Autoscaling
 - [ ] Rolling Updates and Rollbacks
+
+
+## Completed Milestones
+
+### Milestone 1: First Kubernetes Workload
+
+- Created a dedicated Namespace.
+- Deployed Nginx using a Deployment.
+- Configured two replicas.
+- Inspected the automatically created ReplicaSet.
+- Exposed Pods through a ClusterIP Service.
+- Configured CPU and memory requests and limits.
+- Added readiness and liveness probes.
+- Tested self-healing by deleting a Pod.
+- Verified automatic Pod replacement.
+- Accessed Nginx using kubectl port-forward.
