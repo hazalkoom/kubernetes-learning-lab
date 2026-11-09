@@ -40,3 +40,13 @@ A hands-on journey to learning Kubernetes through practical experiments and smal
 - Tested self-healing by deleting a Pod.
 - Verified automatic Pod replacement.
 - Accessed Nginx using kubectl port-forward.
+
+### Milestone 2: Scaling and Rolling Updates
+
+- Configured the Deployment RollingUpdate strategy.
+- Practiced maxSurge and maxUnavailable.
+- Updated the Nginx container image.
+- Observed old and new ReplicaSets during rollout.
+- Inspected Deployment revision history.
+- Practiced server-side dry-run validation.
+- Practiced Deployment rollback.
