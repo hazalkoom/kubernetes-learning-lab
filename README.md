@@ -50,3 +50,12 @@ A hands-on journey to learning Kubernetes through practical experiments and smal
 - Inspected Deployment revision history.
 - Practiced server-side dry-run validation.
 - Practiced Deployment rollback.
+
+### Milestone 3: Troubleshooting Workloads
+
+- Practiced diagnosing failed container image pulls.
+- Investigated ErrImagePull and ImagePullBackOff.
+- Used kubectl describe and Kubernetes Events to identify failures.
+- Inspected Deployment conditions and ReplicaSet status.
+- Observed how maxSurge and maxUnavailable preserve availability during a failed rollout.
+- Recovered the Deployment by restoring a valid container image.
