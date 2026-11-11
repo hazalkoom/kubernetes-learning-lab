@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+
+metadata:
+  name: nginx-config
+  namespace: learning-lab
+
+data:
+  APP_ENV: development
+  LOG_LEVEL: debug
+
+  index.html: |
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Kubernetes Learning Lab</title>
+      </head>
+      <body>
+        <h1>Milestone 4</h1>
+        <p>This page is served using a Kubernetes ConfigMap.</p>
+      </body>
+    </html>

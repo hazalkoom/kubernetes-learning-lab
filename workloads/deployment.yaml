@@ -1,3 +1,4 @@
+
 apiVersion: apps/v1
 kind: Deployment
 
@@ -5,10 +6,10 @@ metadata:
   name: nginx
   namespace: learning-lab
 
-spec: 
+spec:
   replicas: 2
 
-  strategy: 
+  strategy:
     type: RollingUpdate
     rollingUpdate:
       maxSurge: 1
@@ -32,6 +33,25 @@ spec:
             - name: http
               containerPort: 80
 
+          env:
+            - name: APP_ENV
+              valueFrom:
+                configMapKeyRef:
+                  name: nginx-config
+                  key: APP_ENV
+
+            - name: LOG_LEVEL
+              valueFrom:
+                configMapKeyRef:
+                  name: nginx-config
+                  key: LOG_LEVEL
+
+            - name: DEMO_API_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: nginx-demo-secret
+                  key: DEMO_API_TOKEN
+
           resources:
             requests:
               cpu: 50m
@@ -53,3 +73,17 @@ spec:
               port: http
             initialDelaySeconds: 5
             periodSeconds: 10
+
+          volumeMounts:
+            - name: nginx-page
+              mountPath: /usr/share/nginx/html/index.html
+              subPath: index.html
+              readOnly: true
+
+      volumes:
+        - name: nginx-page
+          configMap:
+            name: nginx-config
+            items:
+              - key: index.html
+                path: index.html
